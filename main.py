@@ -42,10 +42,6 @@ def textreviews():
     if not os.path.exists("reviews"):
         os.makedirs("reviews")
 
-    with os.scandir("reviews") as directory:
-        for entry in directory:
-            if entry.is_file():
-                os.remove(entry)
     for review in reviews:
         for comp in computer:
             with open(f"reviews/{comp['Product']}.txt", "w") as review_file:
